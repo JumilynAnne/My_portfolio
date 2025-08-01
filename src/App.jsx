@@ -43,7 +43,7 @@ function App() {
               </div>
 
               <div className='w-full flex flex-col justify-center gap-[36px]'>
-                <h1 className='text-white text-[120px]  '>About Me</h1>
+                <h1 className='text-white text-[120px]  '>About Me test</h1>
                 <p className="text-white text-[25px] mr-[220px] "> 
                   I am Jumilyn Anne, a dedicated and motivated third-year Bachelor of Science in Information Technology student at Mapúa University. With a strong foundation in programming, system design, and data management, 
                   I am passionate about using technology to solve real-world problems. I am eager to apply my skills in a dynamic and challenging environment where I can contribute to innovative projects and continue to grow as an IT professional.
