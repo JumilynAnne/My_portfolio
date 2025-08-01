@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+   font-family: 'customFont';
+   src: url('./fonts/sample-font.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@layer components{
+    .custom-font{
+        font-family: 'customFont', sans-serif; 
+    }
+}
