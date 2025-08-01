@@ -35,14 +35,16 @@ function App() {
       <main className='min-h-screen bg-[#232946]'>
 
       {/* Header */}
-      <header>
-        <Dock 
+      <header className="fixed h-full w-full pb-6 z-[70] lg:h-fit lg:pt-6 pointer-events-none border border-blue-400">
+        <nav className="h-full w-full flex items-end justify-center lg:items-center lg:h-[80px]">
+          <Dock 
             items={items}
             panelHeight={68}
             baseItemSize={50}
             magnification={70}
-
+            className=" pointer-events-auto"
           />
+        </nav>
           
       </header>
         {/* landing section */}
@@ -52,7 +54,7 @@ function App() {
           <div className="w-full flex flex-col justify-center items-center ">
             <SplitText
                 text="Portfolio"
-                className="text-white text-[200px]"
+                className="text-white text-[200px] custom-font font-semibold"
                 delay={100}
                 duration={0.6}
                 ease="power3.out"
@@ -68,7 +70,7 @@ function App() {
           </div>
           <div className="w-full h-screen relative  ">
             <img src={Me} className="absolute top-[100px]  w-fit h-[1000px]"/>
-            <img src={Bubble} className="absolute top-[135px] left-[550px] w-fit h-[300px]"/>
+            <img src={Bubble} className="absolute top-[135px] left-[500px] w-fit h-[300px]"/>
           </div>
 
         </section>
@@ -80,7 +82,7 @@ function App() {
               </div>
 
               <div className='w-full flex flex-col justify-center gap-[36px]'>
-                <h1 className='text-white text-[120px]  '>About</h1>
+                <h1 className='text-white text-[120px] font-semibold custom-font '>About</h1>
                
                  <TextType 
                     text={"I am Jumilyn Anne, a dedicated and motivated third-year Bachelor of Science in Information Technology student at Mapúa University. With a strong foundation in programming, system design, and data management, I am passionate about using technology to solve real-world problems. I am eager to apply my skills in a dynamic and challenging environment where I can contribute to innovative projects and continue to grow as an IT professional."}
@@ -111,7 +113,7 @@ function App() {
         <section className="h-screen flex flex-col  justify-center relative  border border-t-purple-200">
 
                 <h1 className=" absolute top-[100px] left-[830px]
-                 text-white text-[100px] border border-r-red-300">Skills </h1>
+                 text-white text-[120px] border border-r-red-300 font-semibold custom-font">Skills </h1>
               
              
              <div className="absolute top-[300px] left-[200px] flex-row">
@@ -135,7 +137,7 @@ function App() {
         {/* files/ works */}
         <section className="h-screen border border-pink-400">
           <div> 
-            <h1 className="flex justify-center text-white text-[150px]">Works</h1>
+            <h1 className="flex justify-center text-white text-[150px] font-semibold custom-font">Works</h1>
           </div>
 
           {/* folder */}

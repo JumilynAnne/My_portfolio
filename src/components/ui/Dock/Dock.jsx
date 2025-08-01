@@ -82,10 +82,10 @@ function DockLabel({ children, className = "", ...rest }) {
       {isVisible && (
         <motion.div
           initial={{ opacity: 0, y: 0 }}
-          animate={{ opacity: 1, y: -10 }}
+          animate={{ opacity: 1, y: 10 }}
           exit={{ opacity: 0, y: 0 }}
           transition={{ duration: 0.2 }}
-          className={`${className} absolute -top-6 left-1/2 w-fit whitespace-pre rounded-md border border-neutral-700 bg-[#060010] px-2 py-0.5 text-xs text-white`}
+          className={`${className} absolute -top-12 left-1/2 w-fit whitespace-pre rounded-md border border-neutral-700 bg-[#2C303B] px-2 py-0.5 text-xs text-white lg:top-auto lg:-bottom-6`}
           role="tooltip"
           style={{ x: "-50%" }}
         >
@@ -111,7 +111,7 @@ export default function Dock({
   magnification = 70,
   distance = 200,
   panelHeight = 64,
-  dockHeight = 256,
+  dockHeight = 80,
   baseItemSize = 50,
 }) {
   const mouseX = useMotionValue(Infinity);
@@ -138,7 +138,7 @@ export default function Dock({
           isHovered.set(0);
           mouseX.set(Infinity);
         }}
-        className={`${className} absolute top-2 left-1/2 transform -translate-x-1/2 flex items-end w-fit gap-4 rounded-2xl border-white border-2 pb-2 px-4`}
+        className={`${className} flex items-end w-fit gap-4 rounded-2xl pb-[10px] px-8 transition-colors duration-300 ease-in-out lg:items-start lg:pt-[10px]`}
         style={{ height: panelHeight }}
         role="toolbar"
         aria-label="Application dock"
