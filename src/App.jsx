@@ -4,7 +4,7 @@ import Bubble from "./img/Bubble.png"
 import Square from "./img/Square.jpg"
 import SplitText from "./components/ui/SplitText/SplitText"
 import TextType from "./components/ui/TextType/TextType"
-import Dock from "./components/ui/Dock/Dock"
+import GooeyNav from "./components/ui/GooeyNav/GooeyNav"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithub,
@@ -24,28 +24,31 @@ function App() {
     const handleAnimationComplete = () => {
     console.log('All letters have animated!');
   };
- const items = [
-    { icon: <FontAwesomeIcon icon={faFacebook} size={18}/>, label: 'Home', onClick: () => alert('Home!') },
-    { icon: <FontAwesomeIcon icon={faFacebook} size={18}/>, label: 'Archive', onClick: () => alert('Archive!') },
-    { icon: <FontAwesomeIcon icon={faFacebook} size={18}/>, label: 'Profile', onClick: () => alert('Profile!') },
-  ];
+    const items = [
+      { label: "Home", href: "#" },
+      { label: "About", href: "#" },
+       { label: "Project", href: "#" },
+      { label: "Contact", href: "#" },
+    ];
 
   return (
     <>
       <main className='min-h-screen bg-[#232946]'>
 
       {/* Header */}
-      <header className="fixed h-full w-full pb-6 z-[70] lg:h-fit lg:pt-6 pointer-events-none border border-blue-400">
-        <nav className="h-full w-full flex items-end justify-center lg:items-center lg:h-[80px]">
-          <Dock 
+      <header>
+        <div className="realtive h-fit">
+          <GooeyNav
             items={items}
-            panelHeight={68}
-            baseItemSize={50}
-            magnification={70}
-            className=" pointer-events-auto"
+            particleCount={15}
+            particleDistances={[90, 10]}
+            particleR={100}
+            initialActiveIndex={0}
+            animationTime={600}
+            timeVariance={300}
+            colors={[1, 2, 3, 1, 2, 3, 1, 4]}
           />
-        </nav>
-          
+        </div>
       </header>
         {/* landing section */}
         <section className='h-screen flex flex-row border  border-red-400 '>
