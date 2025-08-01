@@ -2,6 +2,9 @@ import Aboutpic from "./img/Aboutpic.jpg"
 import Me from "./img/Me.png"
 import Bubble from "./img/Bubble.png"
 import Square from "./img/Square.jpg"
+import SplitText from "./components/ui/SplitText/SplitText"
+import TextType from "./components/ui/TextType/TextType"
+import Dock from "./components/ui/Dock/Dock"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithub,
@@ -17,16 +20,50 @@ import {
 import './App.css'
 
 function App() {
+
+    const handleAnimationComplete = () => {
+    console.log('All letters have animated!');
+  };
+ const items = [
+    { icon: <FontAwesomeIcon icon={faFacebook} size={18}/>, label: 'Home', onClick: () => alert('Home!') },
+    { icon: <FontAwesomeIcon icon={faFacebook} size={18}/>, label: 'Archive', onClick: () => alert('Archive!') },
+    { icon: <FontAwesomeIcon icon={faFacebook} size={18}/>, label: 'Profile', onClick: () => alert('Profile!') },
+  ];
+
   return (
     <>
       <main className='min-h-screen bg-[#232946]'>
 
+      {/* Header */}
+      <header>
+        <Dock 
+            items={items}
+            panelHeight={68}
+            baseItemSize={50}
+            magnification={70}
+
+          />
+          
+      </header>
         {/* landing section */}
         <section className='h-screen flex flex-row border  border-red-400 '>
           
           {/* text */}
           <div className="w-full flex flex-col justify-center items-center ">
-            <h1 className=" text-white text-[200px]">Portfolio</h1>
+            <SplitText
+                text="Portfolio"
+                className="text-white text-[200px]"
+                delay={100}
+                duration={0.6}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-100px"
+                textAlign="center"
+                onLetterAnimationComplete={handleAnimationComplete}
+              />
             <h2 className=" text-white text-[30px]">Jumilyn Anne |  Developer</h2>
           </div>
           <div className="w-full h-screen relative  ">
@@ -43,12 +80,17 @@ function App() {
               </div>
 
               <div className='w-full flex flex-col justify-center gap-[36px]'>
-                <h1 className='text-white text-[120px]  '>About Me test</h1>
-                <p className="text-white text-[25px] mr-[220px] "> 
-                  I am Jumilyn Anne, a dedicated and motivated third-year Bachelor of Science in Information Technology student at Mapúa University. With a strong foundation in programming, system design, and data management, 
-                  I am passionate about using technology to solve real-world problems. I am eager to apply my skills in a dynamic and challenging environment where I can contribute to innovative projects and continue to grow as an IT professional.
-                 </p>
-                 
+                <h1 className='text-white text-[120px]  '>About</h1>
+               
+                 <TextType 
+                    text={"I am Jumilyn Anne, a dedicated and motivated third-year Bachelor of Science in Information Technology student at Mapúa University. With a strong foundation in programming, system design, and data management, I am passionate about using technology to solve real-world problems. I am eager to apply my skills in a dynamic and challenging environment where I can contribute to innovative projects and continue to grow as an IT professional."}
+                    className="text-white text-[25px] mr-[220px] "
+                    typingSpeed={10}
+                    pauseDuration={1500}
+                    showCursor={true}
+                    cursorCharacter="|"
+                  />
+                  
                 <div className="flex gap-[10px]   ">
                 
                   <a href=""className="text-[#EEBBC3] text-[50px] ">
@@ -74,10 +116,12 @@ function App() {
              
              <div className="absolute top-[300px] left-[200px] flex-row">
                 <h2 className=" text-white text-[50px] "> Frontend </h2>
-                <FontAwesomeIcon icon={faJs} className="text-[#EEBBC3] text-[152px]"/>
-                <FontAwesomeIcon icon={faHtml5} className="text-[#EEBBC3] text-[152px]"/>
-                <FontAwesomeIcon icon={faCss3Alt} className="text-[#EEBBC3] text-[152px]"/>
-                <FontAwesomeIcon icon={faReact} className="text-[#EEBBC3] text-[152px]"/>
+                <div className="grid grid-cols-3 gap-5">
+                  <FontAwesomeIcon icon={faJs} className="text-[#EEBBC3] text-[152px]"/>
+                  <FontAwesomeIcon icon={faHtml5} className="text-[#EEBBC3] text-[152px]"/>
+                  <FontAwesomeIcon icon={faCss3Alt} className="text-[#EEBBC3] text-[152px]"/>
+                  <FontAwesomeIcon icon={faReact} className="text-[#EEBBC3] text-[152px]"/>
+                </div>
              </div>
 
              <div className="absolute left-[1300px] top-[300px]  ">
