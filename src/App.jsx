@@ -36,8 +36,8 @@ function App() {
       <main className='min-h-screen bg-[#232946]'>
 
       {/* Header */}
-      <header>
-        <div className="realtive h-fit">
+      <header className="fixed h-[90px] w-full top-0 py-3 flex justify-center items-center border bg-[#232946] overflow-hidden  border-blue-400 pointer-events-none z-50">
+        <nav className="text-l font-semibold w-fit h-full flex items-center justify-center rounded-md pointer-events-auto">
           <GooeyNav
             items={items}
             particleCount={15}
@@ -48,7 +48,7 @@ function App() {
             timeVariance={300}
             colors={[1, 2, 3, 1, 2, 3, 1, 4]}
           />
-        </div>
+        </nav>
       </header>
         {/* landing section */}
         <section className='h-screen flex flex-row border  border-red-400 '>
