@@ -92,6 +92,12 @@ const GooeyNav = ({
   const handleClick = (e, index) => {
     const liEl = e.currentTarget;
     if (activeIndex === index) return;
+
+    const item = items[index];
+      if (item?.onclick) {
+        item.onclick();
+      }
+
     setActiveIndex(index);
     updateEffectPosition(liEl);
     if (filterRef.current) {
@@ -107,6 +113,8 @@ const GooeyNav = ({
       makeParticles(filterRef.current);
     }
   };
+
+
   const handleKeyDown = (e, index) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
