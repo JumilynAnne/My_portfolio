@@ -1,8 +1,8 @@
 import Aboutpic from "./img/Aboutpic.jpg"
-import Me1 from "./img/Me1.png"
-import Me2 from "./img/Me2.png"
-import Heart from "./img/Heart.png"
-import Square from "./img/Square.jpg"
+import cloudr from "./img/cloudr.png"
+import cloudl from "./img/cloudl.png"
+import cloud3 from "./img/cloud3.png"
+import twinkle from "./img/twinkle.png"
 import SplitText from "./components/ui/SplitText/SplitText"
 import TextType from "./components/ui/TextType/TextType"
 import GooeyNav from "./components/ui/GooeyNav/GooeyNav"
@@ -62,12 +62,12 @@ function App() {
         </nav>
       </header>
         {/* landing section */}
-        <section className='h-screen flex flex-row border  border-red-400 '
+        <section className='h-screen flex flex-row border  border-red-400 animate-float'
           ref={sectionRefs.landing}
         >
           
           {/* text */}
-          <div className="w-full flex flex-col justify-center items-center ">
+          <div className="absolute top-[300px] left-[625px] ">
             <SplitText
                 text="Portfolio"
                 className="text-white text-[200px] custom-font font-semibold"
@@ -82,15 +82,18 @@ function App() {
                 textAlign="center"
                 onLetterAnimationComplete={handleAnimationComplete}
               />
-            <h2 className=" text-white text-[30px] custom-font">Jumilyn Anne |  Developer</h2>
+            <h2 className=" flex justify-center text-white text-[30px] custom-font">Jumilyn Anne |  Developer</h2>
           </div>
 
-          <div className="w-full h-screen relative gap-[5px]  ">
-            <img src={Me1} className="absolute top-[100px]  w-fit h-[800px] "/>
-            <img src={Me2}  className="absolute top-[100px]  w-fit h-[800px] animate-pulse "/>
-            <img src={Heart} className="absolute top-[135px] left-[500px] w-fit h-[300px] animate-my-bounce"/>
-          </div>
+          {/* cloud   <img src={cloudr} />*/}
+          <div className="relative flex  w-full h-full">
+            <img src={cloudl} className="absolute  bottom-[225px] left-[1000px] w-fit h-[190px] " />
+           <img src={cloud3} className="absolute bottom-[200px] right-[100px] w-fit h-[190px] " />
+            <img src={cloudr} className=" absolute top-[200px] left-[200px] w-fit h-[190px] " />
+            <img src={cloudr} className=" absolute top-[300px] left-[100px] w-fit h-[190px] " />
 
+          </div>
+         
         </section>
 
         {/* about section */}
@@ -100,8 +103,9 @@ function App() {
                     
               <div className='w-full flex justify-center items-center'>
                 <img src={Aboutpic} className='w-fit h-[600px] border-[25px] border-[#EEBBC3] shadow-[10px]' />
+                
               </div>
-
+                
               <div className='w-full flex flex-col justify-center gap-[36px]'>
                 <h1 className='text-white text-[120px] font-semibold custom-font '>About Me</h1>
                
@@ -113,6 +117,8 @@ function App() {
                     showCursor={true}
                     cursorCharacter="|"
                   />
+
+            
                   
                 <div className="flex gap-[10px]   ">
                 
@@ -153,7 +159,6 @@ function App() {
         <section className="h-screen border border-pink-400"
           ref={sectionRefs.project}
         >
-   
 
           {/* folder */}
         
