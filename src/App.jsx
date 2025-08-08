@@ -2,7 +2,6 @@ import Aboutpic from "./img/Aboutpic.jpg"
 import cloudr from "./img/cloudr.png"
 import cloudl from "./img/cloudl.png"
 import cloud3 from "./img/cloud3.png"
-import twinkle from "./img/twinkle.png"
 import SplitText from "./components/ui/SplitText/SplitText"
 import TextType from "./components/ui/TextType/TextType"
 import GooeyNav from "./components/ui/GooeyNav/GooeyNav"
@@ -30,6 +29,7 @@ function App() {
     landing: useRef(),
     about: useRef(),
     project: useRef(),
+    contact: useRef(),
   };
 
     const handleAnimationComplete = () => {
@@ -39,7 +39,7 @@ function App() {
       { label: "Home", onclick: ()=> sectionRefs.landing.current?.scrollIntoView({ behavior: "smooth" }) },
       { label: "About", onclick: ()=> sectionRefs.about.current?.scrollIntoView({ behavior: "smooth" }) },
        { label: "Project", onclick: ()=> sectionRefs.project.current?.scrollIntoView({ behavior: "smooth" }) },
-      { label: "Contact", onclick: ()=> sectionRefs.hero.current?.scrollIntoView({ behavior: "smooth" }) },
+      { label: "Contact", onclick: ()=> sectionRefs.contact.current?.scrollIntoView({ behavior: "smooth" }) },
     ];
 
   return (
@@ -82,7 +82,7 @@ function App() {
                 textAlign="center"
                 onLetterAnimationComplete={handleAnimationComplete}
               />
-            <h2 className=" flex justify-center text-white text-[30px] custom-font">Jumilyn Anne |  Developer</h2>
+            <h2 className=" flex justify-center text-white text-[30px] custom-font">Jumilyn Anne hahahahahahahhah |  Developer</h2>
           </div>
 
           {/* cloud   <img src={cloudr} />*/}
@@ -175,6 +175,13 @@ function App() {
           particleCount={12}
           glowColor="132, 0, 255"
         />
+        </section>
+
+        {/* contact */}
+        <section className="h-screen flex flex-col justify-center items-center border border-blue-400">
+          
+          <h1 className="text-white text-[120px] font-semibold custom-font">Contact Me</h1>
+     
         </section>
       </main>
 
