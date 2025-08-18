@@ -27,6 +27,7 @@ function App() {
   const sectionRefs = {
     landing: useRef(),
     about: useRef(),
+    skills: useRef(),
     project: useRef(),
     contact: useRef(),
   };
@@ -37,6 +38,7 @@ function App() {
     const items = [
       { label: "Home", onclick: ()=> sectionRefs.landing.current?.scrollIntoView({ behavior: "smooth" }) },
       { label: "About", onclick: ()=> sectionRefs.about.current?.scrollIntoView({ behavior: "smooth" }) },
+      { label: "Skills", onclick: ()=> sectionRefs.skills.current?.scrollIntoView({ behavior: "smooth" }) },
       { label: "Project", onclick: ()=> sectionRefs.project.current?.scrollIntoView({ behavior: "smooth" }) },
       { label: "Contact", onclick: ()=> sectionRefs.contact.current?.scrollIntoView({ behavior: "smooth" }) },
     ];
@@ -137,13 +139,13 @@ function App() {
 
         {/* Skills  */}
         <section className="h-screen flex flex-col  justify-center relative  border border-t-purple-200"
-          
+          ref={sectionRefs.skills}
         >
 
                 <h1 className=" absolute top-[100px] left-[830px]
-               text-white text-[120px] border border-r-red-300 font-semibold custom-font">Skills </h1>
+               text-white text-[120px]  font-semibold custom-font">Skills </h1>
 
-            <div className="grid-cols-2 flex justify-center items-center gap-[20px] mt-[200px] border border-[#fffffe]">
+            <div className="grid-cols-2 flex justify-center items-center gap-[20px] mt-[200px] ">
              
               <FontAwesomeIcon icon={faHtml5} className="text-[#eebbc3] text-[150px]"/>
               <FontAwesomeIcon icon={ faReact} className="text-[#eebbc3] text-[150px]"/>
