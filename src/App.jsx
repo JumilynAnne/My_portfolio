@@ -13,14 +13,13 @@ import {
   faGithub,
   faFacebook,
   faLinkedin, 
-  faJs,
   faHtml5,
   faReact,
   faPython,
-  faJava,faCss3Alt
- } from "@fortawesome/free-brands-svg-icons";
+  faJava,faCss3Alt,
+} from "@fortawesome/free-brands-svg-icons";
 
-import './App.css'
+
 
 function App() {
   const ref = useRef(null)
@@ -38,7 +37,7 @@ function App() {
     const items = [
       { label: "Home", onclick: ()=> sectionRefs.landing.current?.scrollIntoView({ behavior: "smooth" }) },
       { label: "About", onclick: ()=> sectionRefs.about.current?.scrollIntoView({ behavior: "smooth" }) },
-       { label: "Project", onclick: ()=> sectionRefs.project.current?.scrollIntoView({ behavior: "smooth" }) },
+      { label: "Project", onclick: ()=> sectionRefs.project.current?.scrollIntoView({ behavior: "smooth" }) },
       { label: "Contact", onclick: ()=> sectionRefs.contact.current?.scrollIntoView({ behavior: "smooth" }) },
     ];
 
@@ -82,18 +81,17 @@ function App() {
                 textAlign="center"
                 onLetterAnimationComplete={handleAnimationComplete}
               />
-            <h2 className=" flex justify-center text-white text-[30px] custom-font">Jumilyn Anne hahahahahahahhah |  Developer</h2>
+            <h2 className=" flex justify-center text-white text-[30px] custom-font">Jumilyn Anne |  Developer</h2>
           </div>
 
           {/* cloud   <img src={cloudr} />*/}
           <div className="relative flex  w-full h-full">
             <img src={cloudl} className="absolute  bottom-[225px] left-[1000px] w-fit h-[190px] " />
-           <img src={cloud3} className="absolute bottom-[200px] right-[100px] w-fit h-[190px] " />
+            <img src={cloud3} className="absolute bottom-[200px] right-[100px] w-fit h-[190px] " />
             <img src={cloudr} className=" absolute top-[200px] left-[200px] w-fit h-[190px] " />
             <img src={cloudr} className=" absolute top-[300px] left-[100px] w-fit h-[190px] " />
 
-          </div>
-         
+          </div> 
         </section>
 
         {/* about section */}
@@ -143,15 +141,15 @@ function App() {
         >
 
                 <h1 className=" absolute top-[100px] left-[830px]
-                 text-white text-[120px] border border-r-red-300 font-semibold custom-font">Skills </h1>
+               text-white text-[120px] border border-r-red-300 font-semibold custom-font">Skills </h1>
 
             <div className="grid-cols-2 flex justify-center items-center gap-[20px] mt-[200px] border border-[#fffffe]">
-              <FontAwesomeIcon icon={faJs}  className="text-[#eebbc3] text-[150px]"/>
+             
               <FontAwesomeIcon icon={faHtml5} className="text-[#eebbc3] text-[150px]"/>
               <FontAwesomeIcon icon={ faReact} className="text-[#eebbc3] text-[150px]"/>
               <FontAwesomeIcon icon={faPython}className="text-[#eebbc3] text-[150px]" />
               <FontAwesomeIcon icon={ faJava} className="text-[#eebbc3] text-[150px]"/>
-               <FontAwesomeIcon icon={ faCss3Alt}className="text-[#eebbc3] text-[150px]" />
+              <FontAwesomeIcon icon={ faCss3Alt}className="text-[#eebbc3] text-[150px]" />
             </div>
 
         </section>
@@ -163,7 +161,6 @@ function App() {
           {/* folder */}
         
         <MagicBento 
-     
           textAutoHide={true}
           enableStars={true}
           enableSpotlight={true}
@@ -178,11 +175,28 @@ function App() {
         </section>
 
         {/* contact */}
-        <section className="h-screen flex flex-col justify-center items-center border border-blue-400">
+        <section className="h-screen flex flex-row justify-center items-center border border-blue-400" 
+        ref={sectionRefs.contact}>
           
-          <h1 className="text-white text-[120px] font-semibold custom-font">Contact Me</h1>
-     
-        </section>
+          <div className="flex flex-row  justify-center items-center">
+
+            <div className=" relative border border-red-400 h-[700px] w-[900px] bg-[#b8c1ec] bg-opacity-70 flex justify-center items-center ">
+            <h1 className="absolute top-[10px] custom-font text-[#eebbc3] text-[90px]"> Contact Me </h1>
+
+            <form action="" className="flex flex-col gap-[20px]  ">
+              <input type="text" placeholder="  Your Name" className="h-[50px] w-[500px] rounded-[10px]  "/>
+                <input type="text" placeholder="  Your Email" className="h-[50px] w-[500px] rounded-[10px] " />
+                <textarea placeholder="  Your Message" className="h-[200px] w-[500px] rounded-[10px] "></textarea>
+            </form>
+            <button className="absolute bottom-[100px] h-[50px] w-[200px] bg-[#eebbc3] text-[#232946] custom-font font-semibold 
+            text-[25px] rounded-[10px]">Send</button>
+
+          </div>
+
+          </div>
+
+          
+        </section>  
       </main>
 
     </>
@@ -190,3 +204,4 @@ function App() {
 }
 
 export default App
+
