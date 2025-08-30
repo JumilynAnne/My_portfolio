@@ -63,12 +63,12 @@ function App() {
         </nav>
       </header>
         {/* landing section */}
-        <section className='h-screen flex flex-row border  border-red-400 animate-float'
+        <section className='h-screen flex flex-row border  border-red-400'
           ref={sectionRefs.landing}
         >
           
           {/* text */}
-          <div className="absolute top-[300px] left-[625px] ">
+          {/* <div className="absolute top-[300px] left-[625px] ">
             <SplitText
                 text="Portfolio"
                 className="text-white text-[200px] custom-font font-semibold"
@@ -84,34 +84,33 @@ function App() {
                 onLetterAnimationComplete={handleAnimationComplete}
               />
             <h2 className=" flex justify-center text-white text-[30px] custom-font">Jumilyn Anne |  Developer</h2>
-          </div>
+          </div> */}
 
           {/* cloud   <img src={cloudr} />*/}
           <div className="relative flex  w-full h-full">
-            <img src={cloudl} className="absolute  bottom-[225px] left-[1000px] w-fit h-[190px] " />
+            {/* <img src={cloudl} className="absolute  bottom-[225px] left-[1000px] w-fit h-[190px] " />
             <img src={cloud3} className="absolute bottom-[200px] right-[100px] w-fit h-[190px] " />
             <img src={cloudr} className=" absolute top-[200px] left-[200px] w-fit h-[190px] " />
-            <img src={cloudr} className=" absolute top-[300px] left-[100px] w-fit h-[190px] " />
+            <img src={cloudr} className=" absolute top-[300px] left-[100px] w-fit h-[190px] " /> */}
 
           </div> 
         </section>
 
         {/* about section */}
-        <section className=' h-screen border flex flex-row justify-center '
+        <section className='h-max border flex flex-row justify-evenly p-10'
           ref={sectionRefs.about}
         >
                     
               <div className='w-full flex justify-center items-center'>
-                <img src={Aboutpic} className='w-fit h-[600px] border-[25px] border-[#EEBBC3] shadow-[10px]' />
-                
+                <img src={Aboutpic} className='h-[600px] border-[25px] border-[#EEBBC3] shadow-[10px]' />
               </div>
                 
-              <div className='w-full flex flex-col justify-center gap-[36px]'>
-                <h1 className='text-white text-[120px] font-semibold custom-font '>About Me</h1>
+              <div className='w-full flex flex-col justify-center gap-5'>
+                <h1 className='text-white text-[100px] font-semibold custom-font '>About Me</h1>
                
                  <TextType 
                     text={"I am Jumilyn Anne, a dedicated and motivated third-year Bachelor of Science in Information Technology student at Mapúa University. With a strong foundation in programming, system design, and data management, I am passionate about using technology to solve real-world problems. I am eager to apply my skills in a dynamic and challenging environment where I can contribute to innovative projects and continue to grow as an IT professional."}
-                    className="text-white text-[25px] mr-[220px] font-extralight"
+                    className="text-white text-[25px] text-justify font-extralight w-[80%]"
                     typingSpeed={5}
                     pauseDuration={1500}
                     showCursor={true}
@@ -122,31 +121,30 @@ function App() {
                   
                 <div className="flex gap-[10px]   ">
                 
-                  <a href="https://github.com/JumilynAnne" target="_blank"className="text-[#EEBBC3] text-[50px] ">
+                  <a href="https://github.com/JumilynAnne" target="_blank"
+                  className="text-[#EEBBC3] text-[50px] hover:text-[#f2e0e0]">
                     <FontAwesomeIcon icon={faGithub} />
                   </a>
-                  <a href="https://www.facebook.com/jumilyn10" target="_blank" className="text-[#EEBBC3] text-[50px] ">
+                  <a href="https://www.facebook.com/jumilyn10" target="_blank"
+                   className="text-[#EEBBC3] text-[50px] hover:text-[#f2e0e0] ">
                     <FontAwesomeIcon icon={faFacebook} />
                   </a>
-                  <a href="#" target="_blank"className="text-[#EEBBC3] text-[50px] ">
+                  <a href="#" target="_blank"
+                  className="text-[#EEBBC3] text-[50px] hover:text-[#f2e0e0] ">
                     <FontAwesomeIcon icon={faLinkedin} />
                   </a>
                 </div>
               </div>
-             
-            
         </section>
 
         {/* Skills  */}
-        <section className="h-screen flex flex-col  justify-center relative  border border-t-purple-200"
+        <section className="h-max flex flex-col  justify-center items-center gap-10 p-10  border border-t-purple-200"
           ref={sectionRefs.skills}
         >
 
-                <h1 className=" absolute top-[100px] left-[830px]
-               text-white text-[120px]  font-semibold custom-font">Skills </h1>
+            <h1 className="text-white text-[120px]  font-semibold custom-font text-center">Skills </h1>
 
-            <div className="grid-cols-2 flex justify-center items-center gap-[20px] mt-[200px] ">
-             
+            <div className="grid-cols-2 flex justify-center items-center gap-[20px]">
               <FontAwesomeIcon icon={faHtml5} className="text-[#eebbc3] text-[150px]"/>
               <FontAwesomeIcon icon={ faReact} className="text-[#eebbc3] text-[150px]"/>
               <FontAwesomeIcon icon={faPython}className="text-[#eebbc3] text-[150px]" />
@@ -186,9 +184,9 @@ function App() {
             <h1 className="absolute top-[10px] custom-font text-[#eebbc3] text-[90px]"> Contact Me </h1>
 
             <form action="" className="flex flex-col gap-[20px]  ">
-              <input type="text" placeholder="  Your Name" className="h-[50px] w-[500px] rounded-[10px]  "/>
-                <input type="text" placeholder="  Your Email" className="h-[50px] w-[500px] rounded-[10px] " />
-                <textarea placeholder="  Your Message" className="h-[200px] w-[500px] rounded-[10px] "></textarea>
+              <input type="text" placeholder="Your Name" className="h-[50px] w-[500px] rounded-[10px]  pl-5"/>
+                <input type="text" placeholder="Your Email" className="h-[50px] w-[500px] rounded-[10px] pl-5" />
+                <textarea placeholder="Your Message" className="h-[200px] w-[500px] rounded-[10px] p-5"></textarea>
             </form>
             <button className="absolute bottom-[100px] h-[50px] w-[200px] bg-[#eebbc3] text-[#232946] custom-font font-semibold 
             text-[25px] rounded-[10px]">Send</button>
